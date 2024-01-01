@@ -1,0 +1,63 @@
+default rhel79
+#default vesamenu.c32
+timeout 600
+menu clear
+
+label local
+  menu label Boot from ^local drive
+  menu default
+  localboot 0xffff
+
+label rhel79
+  menu label ^Install Red Hat Enterprise Linux 7.9
+  kernel images/rhel79/vmlinuz
+  append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/cdh.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  #append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/rhel79.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  #append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/index.php inst.ks.sendmac inst.ks.sendsn quiet
+
+label rhel83
+  menu label ^Install Red Hat Enterprise Linux 8.3
+  kernel images/rhel83/vmlinuz
+  append initrd=images/rhel83/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/ocr2arrow.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  #append initrd=images/rhel83/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/rhel83.cfg inst.ks.sendmac inst.ks.sendsn quiet
+
+#label rhel53
+#  menu label ^Install Red Hat Enterprise Linux 5.3
+#  kernel images/rhel53/vmlinuz
+#  append initrd=images/rhel53/initrd.img ip=dhcp ks=http://10.0.0.1/ks/basic/rhel53.cfg ks.sendmac ks.sendsn quiet
+
+#label rhel54
+#  menu label ^Install Red Hat Enterprise Linux 5.4
+#  kernel images/rhel54/vmlinuz
+#  append initrd=images/rhel54/initrd.img ip=dhcp ks=http://10.0.0.1/ks/basic/rhel54.cfg ks.sendmac ks.sendsn quiet
+
+#label rhel69
+#  menu label ^Install Red Hat Enterprise Linux 6.9
+#  kernel images/rhel69/vmlinuz
+#  append initrd=images/rhel69/initrd.img ip=dhcp ks=http://10.0.0.1/ks/basic/rhel69.cfg ks.sendmac ks.sendsn quiet
+
+label v10sp1
+  menu label ^Install Kylin Linux Advanced Server V10 SP1
+  kernel images/v10sp1/vmlinuz
+  append initrd=images/v10sp1/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/v10sp1.cfg inst.ks.sendmac inst.ks.sendsn quiet
+
+label v10sp2
+  menu label ^Install Kylin Linux Advanced Server V10 SP2
+  kernel images/v10sp2/vmlinuz
+  append initrd=images/v10sp2/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/ocr.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  #append initrd=images/v10sp2/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/v10sp2.cfg inst.ks.sendmac inst.ks.sendsn quiet
+
+label v7update6
+  menu label ^Install NeoKylin Linux Advanced Server V7Update6
+  kernel images/v7update6/vmlinuz
+  append initrd=images/v7update6/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/v7update6.cfg inst.ks.sendmac inst.ks.sendsn quiet
+
+label rescue_rhel79
+  menu label ^Rescue RHEL 7.9
+  kernel images/rhel79/vmlinuz
+  append initrd=images/rhel79/initrd.img inst.repo=http://10.0.0.1/os/rhel/7.9/base/x86_64 rescue quiet
+
+label rescue_v10sp2
+  menu label ^Rescue Kylin V10 SP2
+  kernel images/v10sp2/vmlinuz
+  append initrd=images/v10sp2/initrd.img inst.repo=http://10.0.0.1/os/kylin/v10sp2/base/x86_64 rescue console=tty1 quiet

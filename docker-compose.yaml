@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  tftp:
+    build: .
+    image: aisuhua/tftp:latest
+    container_name: tftp
+    restart: always
+    network_mode: host
+    ports:
+      - 69:69/udp
+    volumes:
+      - ./data:/data 
