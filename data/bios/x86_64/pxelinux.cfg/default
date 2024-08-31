@@ -11,7 +11,7 @@ label local
 label rhel79
   menu label ^Install Red Hat Enterprise Linux 7.9
   kernel images/rhel79/vmlinuz
-  append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/cdh.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/rhel79.cfg inst.ks.sendmac inst.ks.sendsn quiet
   #append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/rhel79.cfg inst.ks.sendmac inst.ks.sendsn quiet
   #append initrd=images/rhel79/initrd.img ip=dhcp inst.ks=http://10.0.0.1/index.php inst.ks.sendmac inst.ks.sendsn quiet
 
@@ -21,6 +21,11 @@ label rhel83
   append initrd=images/rhel83/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/ocr2arrow.cfg inst.ks.sendmac inst.ks.sendsn quiet
   #append initrd=images/rhel83/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/rhel83.cfg inst.ks.sendmac inst.ks.sendsn quiet
 
+label rhel85
+  menu label ^Install Red Hat Enterprise Linux 8.5
+  kernel images/rhel85/vmlinuz
+  append initrd=images/rhel85/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/rhel85.cfg inst.ks.sendmac inst.ks.sendsn quiet
+ 
 #label rhel53
 #  menu label ^Install Red Hat Enterprise Linux 5.3
 #  kernel images/rhel53/vmlinuz
@@ -44,8 +49,8 @@ label v10sp1
 label v10sp2
   menu label ^Install Kylin Linux Advanced Server V10 SP2
   kernel images/v10sp2/vmlinuz
-  append initrd=images/v10sp2/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/ocr.cfg inst.ks.sendmac inst.ks.sendsn quiet
-  #append initrd=images/v10sp2/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/v10sp2.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  #append initrd=images/v10sp2/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/complex/ocr.cfg inst.ks.sendmac inst.ks.sendsn quiet
+  append initrd=images/v10sp2/initrd.img ip=dhcp inst.ks=http://10.0.0.1/ks/basic/v10sp2.cfg inst.ks.sendmac inst.ks.sendsn quiet
 
 label v7update6
   menu label ^Install NeoKylin Linux Advanced Server V7Update6
